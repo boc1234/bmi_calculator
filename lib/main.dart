@@ -16,6 +16,11 @@ class BMICalculator extends StatelessWidget {
         // floatingActionButtonTheme:
         //     const FloatingActionButtonThemeData(backgroundColor: Colors.purple),
         scaffoldBackgroundColor: const Color(0xff0A0E21),
+        // sliderTheme: SliderThemeData(
+        //   activeTrackColor: Colors.blue,
+        //   inactiveTrackColor: Colors.red,
+        //   thumbColor: Colors.purple
+        // )
       ),
       home: const InputPage(),
     );
