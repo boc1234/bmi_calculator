@@ -1,6 +1,6 @@
+import 'package:bmi_calculator/arguments/ResultData.dart';
 import 'package:bmi_calculator/calculator_brain.dart';
 import 'package:bmi_calculator/components/round_icon_button.dart';
-import 'result_page.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import '../components/bottom_button.dart';
@@ -233,7 +233,9 @@ class _InputPageState extends State<InputPage> {
             ),
             BottomButton(buttonTitle: "Calculate",onTap: (){
               CalculatorBrain calc = CalculatorBrain(weight: weight, height: height);
-              Navigator.push(context, MaterialPageRoute(builder:(context)=> ResultPage(bmiResult: calc.CalculatorBMI(), resulText: calc.getResult(), interpretation: calc.getInterpretation())));
+
+              Navigator.pushNamed(context, 'result_page',arguments: ResultDate(bmiResult: calc.CalculatorBMI(), interpretation: calc.getInterpretation(), resulText: calc.getResult()));
+              // Navigator.push(context, MaterialPageRoute(builder:(context)=> ResultPage(bmiResult: calc.CalculatorBMI(), resulText: calc.getResult(), interpretation: calc.getInterpretation())));
             },),
           ],
         ));

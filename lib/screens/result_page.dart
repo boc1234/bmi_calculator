@@ -1,15 +1,21 @@
+import 'package:bmi_calculator/arguments/ResultData.dart';
 import 'package:bmi_calculator/components/bottom_button.dart';
 import 'package:bmi_calculator/constants.dart';
 import 'package:bmi_calculator/components/reuseable_card.dart';
 import 'package:flutter/material.dart';
 
+
 class ResultPage extends StatelessWidget {
-  ResultPage({super.key,required this.bmiResult,required this.resulText,required this.interpretation});
-  String bmiResult;
-  String resulText;
-  String interpretation;
+  const ResultPage({super.key,});
+  // required this.bmiResult,required this.resulText,required this.interpretation
+  // String bmiResult;
+  // String resulText;
+  // String interpretation;
+
   @override
   Widget build(BuildContext context) {
+    final args = ModalRoute.of(context)!.settings.arguments as ResultDate;
+
     return Scaffold(
       appBar: AppBar(
         title: Text("BMI CALCULATOR"),
@@ -36,15 +42,15 @@ class ResultPage extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceAround,
                 children: [
                   Text(
-                    resulText,
+                    args.resulText,
                     style: kResultTextStyle,
                   ),
                   Text(
-                    bmiResult,
+                    args.bmiResult,
                     style: kBMITextStyle,
                   ),
                   Text(
-                    interpretation,
+                    args.interpretation,
                     style: kBodyTextStyle,
                     textAlign: TextAlign.center,
 

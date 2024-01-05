@@ -1,3 +1,4 @@
+import 'package:bmi_calculator/screens/result_page.dart';
 import 'package:flutter/material.dart';
 import 'screens/input_page.dart';
 
@@ -23,6 +24,11 @@ class BMICalculator extends StatelessWidget {
         // )
       ),
       home: const InputPage(),
+      routes: {
+        'input_page':(context)=>const InputPage(),
+        'result_page':(context)=> ResultPage(),
+    
+      },
     );
   }
 }
